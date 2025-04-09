@@ -3,7 +3,7 @@ import { useProductStore } from "../store/product";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 
-const HomePage = () => {
+const StorePage = () => {
   const { fetchProducts, products, currentAspectRatio } = useProductStore();
 
   useEffect(() => {
@@ -134,4 +134,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default StorePage;

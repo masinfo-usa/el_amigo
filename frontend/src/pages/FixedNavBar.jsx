@@ -43,7 +43,7 @@ const theme = createTheme({
 const links = [
   { text: "Home", href: "/" },
   { text: "Add Product", href: "/create" },
-  { text: "Our Process", href: "/our-process" },
+  { text: "Store", href: "/store" },
   { text: "Contact Us", href: "/contact-us" },
   { text: "Halal Certifications", href: "/halal-certifications" },
   { text: "FAQs", href: "/faqs" },

@@ -12,10 +12,10 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.10.4",
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.1.9",
-    "@mui/material": "^6.1.9",
+    "@mui/material": "^6.4.11",
     "framer-motion": "^11.11.9",
     "mern_project": "file:..",
     "react": "^18.3.1",

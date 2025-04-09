@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { Box, Link, Stack } from "@mui/material";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import StorePage from "./pages/StorePage";
 import CreatePage from "./pages/CreatePage";
 import FixedNavBar from "./pages/FixedNavBar";
 import CommonFooter from "./pages/CommonFooter";
@@ -45,7 +45,7 @@ function App() {
           >
             <Link href="/" color='#fff' underline="none">Home</Link>
             <Link href="/create" color='#fff' underline="none">Add Product</Link>
-            <Link href="#our-process" color='#fff' underline="none">Our Process</Link>
+            <Link href="/store" color='#fff' underline="none">Store</Link>
             <Link href="#contact-us" color='#fff' underline="none">Contact Us</Link>
             <Link href="#halal-certifications" color='#fff' underline="none">Halal Certifications</Link>
             <Link href="#faqs" color='#fff' underline="none">FAQs</Link>
@@ -55,7 +55,7 @@ function App() {
 
         {/* Define Routes for the pages */}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/store" element={<StorePage />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/testpage" element={<AddressForm />} />
           <Route path="/Login" element={<Login />} />
