@@ -234,7 +234,7 @@ const ProductCard = ({ product }) => {
           sx={{ fontSize: 'clamp(0.85rem, 4vw, 1.2rem)' }}>
             ${product.price}
           </Typography>
-          <Typography varaiant="body1" color="text.secondary" align="left" 
+          <Typography variant="body1" color="text.secondary" align="left" 
           sx={{ fontSize: 'clamp(0.85rem, 4vw, 1.0rem)' }}>
             {product.name}
           </Typography>

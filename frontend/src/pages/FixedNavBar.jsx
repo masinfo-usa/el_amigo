@@ -25,6 +25,7 @@ import ProductDetailsModal from '../components/ProductDetailsModal';
 import FullImageModal from '../components/FullImageModal';
 
 
+import logo from '../images/logo.png'; // Adjust path as needed
 
 
 
@@ -54,30 +55,8 @@ const links = [
 function FixedNavBar() {
   const [isCartOpen, setCartOpen] = useState(false);
   const [isNavOpen, setNavOpen] = useState(false);
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [searchText, setSearchText] = useState("");
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const [cartItemCount, setCartItemCount] = useState(5); // Example item count
-  const placeholders = [
-    "Search Product, Recipes, Etc...",
-    "Search Chicken Breast",
-    "Search Thigh Boneless",
-  ];
-  const productSuggestions = [
-    "Halal Beef",
-    "Chicken Breast",
-    "Lamb Full",
-    "Beef Brisket",
-    "Thigh Boneless",
-  ];
-  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
 
 
@@ -95,17 +74,17 @@ function FixedNavBar() {
                }}>
         <Toolbar 
         
-        sx={{ backgroundColor: '#222',//"#f7f5f0",  
-        borderBottom: "1px solid #dfdbce",
-        m:0, p:1, 
+        sx={{ backgroundColor: '#000',//"",  
+        borderBottom: "0px solid #dfdbce",
+        m:0, p:0, 
         boxShadow: 'none' , display:'flex',
-        justifyContent: "space-around", // Spread left and right sections
+        justifyContent: "space-between", // Spread left and right sections
         alignItems: "center", // Center vertically
           
       }}>
           
           {/* MenuIcon */}
-          {isMediumScreen && !isSearchFocused && (
+          {isMediumScreen && (
             <IconButton
               edge="start"
               onClick={() => setNavOpen(true)}
@@ -121,88 +100,35 @@ function FixedNavBar() {
             </IconButton>
           )}
           {/* Title */}
-          {!(isMediumScreen && isSearchFocused) && (
-            <Typography variant="h6" fontWeight={'bold'} color="#fff"  component="a" href="/" sx={{ minWidth:'30%', textDecoration: 'none' }}>
-              Your Brand
-            </Typography>
-          )}
-            
-            <Box name="searchMainBg"
+          {(true) && (
+           
+            <Box
+              component="a"
+              href="/"
               sx={{
-                backgroundColor: "#fff",
-                width: '100%',
-                position: "relative",
-                display: "flex",
-                justifyContent: 'space-evenly',
-                alignItems: "center",
-                borderRadius: 10,
-                border: isSearchFocused ? '2px solid #000' :'1px solid #BBB7AA', // Ensure border is set on the container
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
               }}
             >
-              <Box name='searchicon'
-                sx={{position: "relative", left: 5,
-                  color: "gray", display: "flex",
-                  alignItems: "center"
-                }}
-              >
-                <SearchIcon />
-              </Box>
-              <InputBase
-                placeholder={placeholders[0]}
-                value={searchText}
-                onFocus={() => setIsSearchFocused(true)}
-               // onBlur={() => setIsSearchFocused(false)}
-                onChange={(e) => setSearchText(e.target.value)}
+              <Box
+                component="img"
+                src={logo}
+                alt="Your Brand"
                 sx={{
-                  backgroundColor: "#fff",
-                  padding: "6px 2px 6px 5px",
-                  borderRadius: 5,
-                  flex: 0.95,
+                  height: 80, // Adjust as needed
+                  width: 'auto',
                 }}
               />
+            </Box>
 
 
-              
-              
 
-              {!isMediumScreen && (
-                <IconButton name='searchClose'
-                onClick={() => {
-                  setIsSearchFocused(false);
-                  setSearchText("");
-                }}
-                sx={{position: "relative", 
-                  backgroundColor: 'transparent',
-                  color: "gray", display: "flex",
-                  mr: '0px',
-                  visibility: isSearchFocused && !isMediumScreen ? 'visible' : 'hidden',
-                  '&:hover': {
-                    backgroundColor: '', // No background color on hover
-                  },
-                  '&:active': {
-                    backgroundColor: '', // No background color on press
-                  },
-                }}
-              >
-                <CloseIcon />
-              </IconButton>
-              )}
+          )}
             
-
-          </Box>
-          {isSearchFocused && isMediumScreen && (
-                <Button
-                  onMouseUp={() => {
-                    setIsSearchFocused(false);
-                    setSearchText("");
-                  }}
-                  sx={{ marginLeft: 1, color:'#fff', textTransform:'none', backgroundColor: '#727272' }}
-                >
-                  Cancel
-                </Button>
-              )}
+                     
               
-          {!(isSearchFocused || isMediumScreen) && (
+          {!(isMediumScreen) && (
               <Button
               name='Login'
               variant="contained"
@@ -224,7 +150,7 @@ function FixedNavBar() {
             </Button>
             )}
 
-          {!(isSearchFocused && isMediumScreen) && (
+          {(isMediumScreen) && (
               <Button
               name='cart'
               variant="contained"
@@ -376,8 +302,6 @@ function FixedNavBar() {
 
 
 
-    {/* Selected Product Modal */}
-         
     
      
 
