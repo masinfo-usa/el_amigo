@@ -10,6 +10,7 @@ import AddressForm from "./pages/ReservationForm";
 //import AddressForm from "./pages/Test";
 import { useMediaQuery, useTheme } from '@mui/material';
 import { useProductStore } from './store/product';
+import HomePage from "./pages/HomePage";
 
 
 
@@ -55,6 +56,7 @@ function App() {
 
         {/* Define Routes for the pages */}
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/store" element={<StorePage />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/testpage" element={<AddressForm />} />
