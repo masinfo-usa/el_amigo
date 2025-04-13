@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import StorePage from "./pages/StorePage";
 import CreatePage from "./pages/CreatePage";
 import FixedNavBar from "./pages/FixedNavBar";
+import CommonNavbar from "./pages/CommonNavbar";
 import CommonFooter from "./pages/CommonFooter";
 import Login from "./pages/Login";
 import AddressForm from "./pages/ReservationForm";
@@ -33,9 +34,12 @@ function App() {
 
 //"#f7f5f0"
   return (
-      <Box px={0} sx={{backgroundColor:'#fff'}}>
-        <FixedNavBar />
-        <Box sx={{backgroundColor:"#222", justifyItems:'center'}} width="100%" paddingTop={'70px'}>
+      <Box px={0} py={0} sx={{backgroundColor:'#fff'}}>
+        {/* <FixedNavBar /> */}
+        <CommonNavbar />
+        {/* <Box sx={{backgroundColor:"#000", justifyItems:'center'}} width="100%" paddingTop={'90px'}/> */}
+          
+        {/* <Box sx={{backgroundColor:"#222", justifyItems:'center'}} width="100%" paddingTop={'70px'}>
           <Stack
             direction="row"
             justifyContent="space-evenly"
@@ -52,7 +56,7 @@ function App() {
             <Link href="#faqs" color='#fff' underline="none">FAQs</Link>
             <Link href="/testpage" color='#fff' underline="none">TestPage</Link>
           </Stack>
-        </Box>
+        </Box> */}
 
         {/* Define Routes for the pages */}
         <Routes>

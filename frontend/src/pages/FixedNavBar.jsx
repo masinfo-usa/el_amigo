@@ -69,14 +69,14 @@ function FixedNavBar() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <AppBar position="fixed" sx={{ backgroundColor: "transparent", zIndex: theme.zIndex.drawer - 1, boxShadow: 'none', 
                }}>
         <Toolbar 
         
         sx={{ backgroundColor: '#000',//"",  
-        borderBottom: "0px solid #dfdbce",
-        m:0, p:0, 
+        borderBottom: "2px solid #00c20a",
+        mx:0, px:0, 
         boxShadow: 'none' , display:'flex',
         justifyContent: "space-between", // Spread left and right sections
         alignItems: "center", // Center vertically
@@ -100,7 +100,6 @@ function FixedNavBar() {
             </IconButton>
           )}
           {/* Title */}
-          {(true) && (
            
             <Box
               component="a"
@@ -114,9 +113,9 @@ function FixedNavBar() {
               <Box
                 component="img"
                 src={logo}
-                alt="Your Brand"
+                alt="El Amigo"
                 sx={{
-                  height: 80, // Adjust as needed
+                  height: 60, // Adjust as needed
                   width: 'auto',
                 }}
               />
@@ -124,11 +123,10 @@ function FixedNavBar() {
 
 
 
-          )}
             
                      
               
-          {!(isMediumScreen) && (
+          {(true) && (
               <Button
               name='Login'
               variant="contained"
@@ -146,11 +144,11 @@ function FixedNavBar() {
                   boxShadow: 'none', // Remove shadow on hover
                 }, 
               }}>
-                Login
+                Sign In
             </Button>
             )}
 
-          {(isMediumScreen) && (
+          {(true) && (
               <Button
               name='cart'
               variant="contained"
