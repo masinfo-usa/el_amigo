@@ -169,7 +169,7 @@ const CommonNavbar = () => {
                 textAlign: 'center',
                 '&:hover': {
                   bgcolor: '#333',
-                  color: '#ff9800',
+                  color: '#00c20a',
                 },
               }}
             >
@@ -196,7 +196,7 @@ const CommonNavbar = () => {
               textAlign: 'center',
               '&:hover': {
                 bgcolor: '#222',
-                color: '#ff9800',
+                color: '#00c20a',
               },
             }}
           >

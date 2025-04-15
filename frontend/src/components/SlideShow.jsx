@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 
 const imageImports = import.meta.glob('../images/foods/*.jpg', { eager: true });
 const images = Object.values(imageImports).map((mod) => mod.default);
@@ -43,13 +43,13 @@ const SlideShow = () => {
     clearInterval(pauseRef.current);
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 4000); // Resume after 4s
+    }, 15000); // Resume after 4s
   };
 
   useEffect(() => {
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 15000);
     return () => clearInterval(pauseRef.current);
   }, []);
 
@@ -84,19 +84,48 @@ const SlideShow = () => {
 
       {/* Caption */}
       <Box
-        sx={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          background: 'rgba(0, 0, 0, 0.25)',
-          color: '#fff',
-          px: 2,
-          py: 1,
-          textAlign: 'start',
-        }}
+      sx={{
+        position: 'absolute',
+        bottom: '10%',
+        left: 'auto',          // or theme.spacing(1)
+        right: 0,         // or theme.spacing(1)
+        background: 'rgba(255, 255, 255, 0.5)',
+        color: '#fff',
+        px: 1,
+        py: 0,
+        mb: 0,
+        borderRadius: '10px 0px 0px 10px',
+        textAlign: 'center',
+      }}
       >
-        <Typography variant="h6">{captions[current]?.title}</Typography>
-        <Typography variant="body2">{captions[current]?.desc}</Typography>
+
+        <Typography variant="body1" 
+        sx={{
+          color: '#000',
+         // textShadow: '0px 0px 10px rgba(0,0,0,0.3)',
+          fontSize: {
+            xs: '1.5rem',  // similar to h5
+            sm: '1.5rem',
+            md: '2.0rem', // default for h4
+          },
+          fontWeight: 600,
+          
+          }}>
+          {captions[current]?.title}</Typography>
+        <Typography variant="h6"
+        sx={{
+          color: '#000',
+     //     textShadow: '0px 0px 10px rgba(0,0,0,0.3)',
+          fontSize: {
+            xs: '0.75rem',  // similar to h5
+            sm: '0.75rem',
+            md: '1.25rem', // default for h4
+          },
+          
+          fontWeight: 600,
+          }}>
+          {/* {captions[current]?.desc} */}
+          </Typography>
       </Box>
 
       {/* Left Button */}
@@ -110,12 +139,12 @@ const SlideShow = () => {
           left: 10,
           top: '50%',
           transform: 'translateY(-50%)',
-          color: '#fff',
-          backgroundColor: 'rgba(0,0,0,0.3)',
-          '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
+          color: '#000',
+          backgroundColor: 'rgba(255,255,255,0.6)',
+          '&:hover': { backgroundColor: 'rgba(255,255,255,0.9)' },
         }}
       >
-        <ArrowBackIos />
+        <ArrowBackIosNew />
       </IconButton>
 
       {/* Right Button */}
@@ -129,9 +158,9 @@ const SlideShow = () => {
           right: 10,
           top: '50%',
           transform: 'translateY(-50%)',
-          color: '#fff',
-          backgroundColor: 'rgba(0,0,0,0.3)',
-          '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
+          color: '#000',
+          backgroundColor: 'rgba(255,255,255,0.6)',
+          '&:hover': { backgroundColor: 'rgba(255,255,255,0.9)' },
         }}
       >
         <ArrowForwardIos />

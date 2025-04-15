@@ -45,6 +45,8 @@ const HeroSection = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
           px: 0,
           mx: 1.5,
           my: 1.5
@@ -88,16 +90,17 @@ const HeroSection = () => {
                 textTransform: 'none',
                 boxShadow: 'none',
                 color: '#FFF',
-                fontSize: 14,
-                width: '150px',
+                fontSize: 20,
+                width: {xs:'80%', md:'auto'},
                 height: '50px',
-                marginTop: 3,
+                marginTop: 5,
                 marginLeft: 0,
+                px: 2,
                 '&:hover': {
                   boxShadow: 'none', // Remove shadow on hover
                 }, 
               }}>
-                ORDER ONLINE
+                Order Online 🌮
             </Button>
 
 
