@@ -43,13 +43,13 @@ const SlideShow = () => {
     clearInterval(pauseRef.current);
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 15000); // Resume after 4s
+    }, 4000); // Resume after 4s
   };
 
   useEffect(() => {
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 15000);
+    }, 2500);
     return () => clearInterval(pauseRef.current);
   }, []);
 
@@ -82,6 +82,58 @@ const SlideShow = () => {
         />
       ))}
 
+
+
+    <Box
+      sx={{
+        position: 'absolute',
+        bottom: '10%',
+        left: 0,          // or theme.spacing(1)
+        right: 'auto',         // or theme.spacing(1)
+        background: 'rgba(255, 255, 255, 0.5)',
+        color: '#fff',
+        px: 1,
+        py: 0,
+        mb: 0,
+        borderRadius: '0px 10px 10px 0px',
+        textAlign: 'start',
+      }}
+      >
+
+        <Typography variant="body1" 
+        sx={{
+          color: '#000',
+         // textShadow: '0px 0px 10px rgba(0,0,0,0.3)',
+          fontSize: {
+            xs: '1.2rem',  // similar to h5
+            sm: '1.2rem',
+            md: '1.5rem', // default for h4
+          },
+          fontWeight: 600,
+          
+          }}>
+          404 W Chatham St, Cary
+</Typography>
+        <Typography variant="h6"
+        sx={{
+          color: '#000',
+     //     textShadow: '0px 0px 10px rgba(0,0,0,0.3)',
+          fontSize: {
+            xs: '0.75rem',  // similar to h5
+            sm: '0.75rem',
+            md: '1.0rem', // default for h4
+          },
+          
+          fontWeight: 600,
+          }}>
+          Open: &nbsp; Tuesday – Sunday, 10am – 8pm
+          <br/>
+          Closed: On Monday
+          </Typography>
+      </Box>
+
+
+
       {/* Caption */}
       <Box
       sx={{
@@ -95,9 +147,24 @@ const SlideShow = () => {
         py: 0,
         mb: 0,
         borderRadius: '10px 0px 0px 10px',
-        textAlign: 'center',
+        textAlign: 'start',
       }}
       >
+
+
+<Typography variant="h6"
+        sx={{
+          color: '#000',
+     //     textShadow: '0px 0px 10px rgba(0,0,0,0.3)',
+          fontSize: {
+            xs: '0.75rem',  // similar to h5
+            md: '1.0rem', // default for h4
+          },
+          
+          fontWeight: 600,
+          }}>
+          We serve
+          </Typography>
 
         <Typography variant="body1" 
         sx={{

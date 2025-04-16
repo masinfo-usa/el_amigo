@@ -16,6 +16,7 @@ const HeroSection = () => {
         flexDirection: isMobile ? 'column' : 'column',
         borderBottom: "0px solid lightgreen",
         width: '100%',
+        pt: 1.25,
         pb: 3,
         gap: '5%' 
 
@@ -100,7 +101,7 @@ const HeroSection = () => {
                   boxShadow: 'none', // Remove shadow on hover
                 }, 
               }}>
-                Order Online 🌮
+                Order Online
             </Button>
 
 

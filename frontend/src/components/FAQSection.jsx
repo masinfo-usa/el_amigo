@@ -10,7 +10,7 @@ import {
   const faqs = [
     {
       question: 'What are your opening hours?',
-      answer: 'We are open from Tuesday to Sunday from 10:00 AM to 8:00 PM. We\'re closed on Mondays.',
+      answer: 'We are open from Tuesday to Sunday from 10:00 AM to 8:00 PM. We\'re only closed on Mondays.',
     },
     {
       question: 'Do you offer vegetarian or vegan options?',

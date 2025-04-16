@@ -64,7 +64,7 @@ const CommonFooter = () => {
               <IconButton color="inherit" href="https://www.yelp.com/biz/el-amigo-mexican-restaurant-cary" target="_blank">
               <FaYelp size={24} /> {/* Using Language as Yelp placeholder */}
               </IconButton>
-              <IconButton color="inherit" href="https://www.google.com/maps/place/El+Amigo+Mexican+Restaurant/@35.7871375,-78.7911446,17z/data=!4m8!3m7!1s0x89acf33421f1dde7:0x27387de807f7ed39!8m2!3d35.7871332!4d-78.7885697!9m1!1b1!16s%2Fg%2F11jntsbn1c?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+              <IconButton color="inherit" href="https://www.google.com/search?q=El+Amigo+Mexican+Restaurant+Cary+NC&hl=en#lrd=0x89acf33421f1dde7:0x27387de807f7ed39,1" target="_blank">
               <FaGoogle size={24} />
               </IconButton>
             </Box>
