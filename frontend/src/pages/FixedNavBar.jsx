@@ -130,7 +130,7 @@ function FixedNavBar() {
               <Button
               name='Login'
               variant="contained"
-              href="/Login"            
+              href="/login"            
               sx={{
                 display: 'flex',
                 bgcolor:"#4287f5",
@@ -471,7 +471,7 @@ function FixedNavBar() {
     <Button
               name='Login'
               variant="contained"
-              href="/Login"            
+              href="/login"            
               sx={{
                 display: 'flex',
                 bgcolor:"#4287f5",

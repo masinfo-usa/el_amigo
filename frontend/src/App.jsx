@@ -12,6 +12,7 @@ import AddressForm from "./pages/ReservationForm";
 import { useMediaQuery, useTheme } from '@mui/material';
 import { useProductStore } from './store/product';
 import HomePage from "./pages/HomePage";
+import Menu from "./pages/Menu";
 
 
 
@@ -64,7 +65,8 @@ function App() {
           <Route path="/store" element={<StorePage />} />
           <Route path="/create" element={<CreatePage />} />
           <Route path="/testpage" element={<AddressForm />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/menu" element={<Menu />} />
         </Routes>
         <CommonFooter />
         

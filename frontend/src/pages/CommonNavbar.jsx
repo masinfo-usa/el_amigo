@@ -186,7 +186,7 @@ const CommonNavbar = () => {
           <ListItemButton
             disableRipple
             component="a"
-            href="/Login"
+            href="/login"
             onClick={() => setDrawerOpen(true)}
             sx={{
               width: '100%',

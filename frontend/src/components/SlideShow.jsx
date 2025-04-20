@@ -84,7 +84,7 @@ const SlideShow = () => {
 
 
 
-    <Box
+    {/* <Box
       sx={{
         position: 'absolute',
         bottom: '10%',
@@ -130,7 +130,7 @@ const SlideShow = () => {
           <br/>
           Closed: On Monday
           </Typography>
-      </Box>
+      </Box> */}
 
 
 

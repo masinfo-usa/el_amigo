@@ -29,7 +29,8 @@ const HomePage = () => {
       <Box
           display="grid"
           sx={{
-            my: 20,
+            mx: '3%',
+            my: 10,
             gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
             gridTemplateRows: 'auto auto',
             gap: 4,
@@ -89,7 +90,8 @@ const HomePage = () => {
       <Box
           display="grid"
           sx={{
-            my: 20,
+            mx: '3%',
+            my: 10,
             gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
             gridTemplateRows: 'auto auto',
             gap: 4,
