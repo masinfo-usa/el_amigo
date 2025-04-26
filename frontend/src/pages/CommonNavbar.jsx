@@ -17,9 +17,9 @@ import { Menu, Close } from '@mui/icons-material';
 import logo from '../images/logo.png';
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Menu', href: '/menu' },
-  { label: 'Gallery', href: '/gallery' },
+  { label: 'Home', href: '#/' },
+  { label: 'Menu', href: '#/menu' },
+  { label: 'Gallery', href: '#/gallery' },
 ];
 
 const CommonNavbar = () => {
@@ -53,25 +53,26 @@ const CommonNavbar = () => {
                 {drawerOpen ? <Close /> : <Menu />}
               </IconButton>
 
-              <Box component="a" href="/" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+              <Box component="a" href="#/" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
                 <Box component="img" src={logo} alt="Logo" sx={{ height: 60 }} />
               </Box>
 
               <Button
-                variant="contained"
-                href="/store"
-                sx={{
-                  bgcolor: '#00c20a',
-                  '&:hover': { bgcolor: '#00c20a' },
-                  textTransform: 'none',
-                }}
-              >
-                Order Now
-              </Button>
+              variant="contained"
+              href="tel:+19193770013" // Replace with your restaurant's number
+              sx={{
+                bgcolor: '#00c20a',
+                '&:hover': { bgcolor: '#00c20a' },
+                textTransform: 'none',
+              }}
+            >
+              Call Now
+            </Button>
+
             </>
           ) : (
             <>
-              <Box component="a" href="/" sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box component="a" href="#/" sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box component="img" src={logo} alt="Logo" sx={{ height: 60 }} />
               </Box>
 
@@ -104,7 +105,7 @@ const CommonNavbar = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <Typography
                   component="a"
-                  href="/login"
+                  href="#/login"
                   sx={{
                     color: '#fff',
                     textDecoration: 'none',
@@ -124,14 +125,14 @@ const CommonNavbar = () => {
 
                 <Button
                   variant="contained"
-                  href="/store"
+                  href="#/store"
                   sx={{
                     bgcolor: '#00c20a',
                     '&:hover': { bgcolor: '#00c20a' },
                     textTransform: 'none',
                   }}
                 >
-                  Order Now
+                  Call Now
                 </Button>
               </Box>
             </>
@@ -160,7 +161,7 @@ const CommonNavbar = () => {
               key={link.href}
               component="a"
               href={link.href}
-              onClick={() => setDrawerOpen(true)}
+              onClick={() => setDrawerOpen(false)}
               sx={{
                 width: '100%',
                 justifyContent: 'center',
@@ -186,8 +187,8 @@ const CommonNavbar = () => {
           <ListItemButton
             disableRipple
             component="a"
-            href="/login"
-            onClick={() => setDrawerOpen(true)}
+            href="#/login"
+            onClick={() => setDrawerOpen(false)}
             sx={{
               width: '100%',
               justifyContent: 'center',

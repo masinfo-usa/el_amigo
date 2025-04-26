@@ -67,7 +67,6 @@ const YelpReview = () => {
                   p: 4,
                   borderRadius: 4,
                   boxShadow: 0,
-                  backgroundColor: '#fff',
                   textAlign: 'center',
                   minHeight: 250,
                   backgroundColor:'#000'

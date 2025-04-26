@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import { Box, Link, Stack } from "@mui/material";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import StorePage from "./pages/StorePage";
 import CreatePage from "./pages/CreatePage";
 import FixedNavBar from "./pages/FixedNavBar";
