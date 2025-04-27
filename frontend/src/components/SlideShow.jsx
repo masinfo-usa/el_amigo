@@ -43,13 +43,13 @@ const SlideShow = () => {
     clearInterval(pauseRef.current);
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 4000); // Resume after 4s
+    }, 5000); // Resume after 4s
   };
 
   useEffect(() => {
     pauseRef.current = setInterval(() => {
       nextSlide();
-    }, 2500);
+    }, 3000);
     return () => clearInterval(pauseRef.current);
   }, []);
 
@@ -134,7 +134,7 @@ const SlideShow = () => {
 
 
 
-      {/* Caption */}
+      {/* Caption 
       <Box
       sx={{
         position: 'absolute',
@@ -191,9 +191,12 @@ const SlideShow = () => {
           
           fontWeight: 600,
           }}>
-          {/* {captions[current]?.desc} */}
           </Typography>
       </Box>
+      */}
+
+
+
 
       {/* Left Button */}
       <IconButton

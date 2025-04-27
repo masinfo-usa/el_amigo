@@ -54,7 +54,7 @@ const HeroSection = () => {
         }}
       >
 
-  <Typography variant="h2" color="red" fontWeight="bold">
+  <Typography variant="h2" color="#fe4438" fontWeight="bold">
     El Amigo
   </Typography>
 
@@ -62,7 +62,7 @@ const HeroSection = () => {
           variant="body1"
           sx={{
             fontWeight: 'bold',
-            fontSize: { xs: '2.5rem', sm: '3.0rem', md: '3.5rem' },
+            fontSize: { xs: '2.0rem', sm: '3.0rem', md: '3.5rem' },
             color: '#fff'
           }}
         >
@@ -76,12 +76,12 @@ const HeroSection = () => {
             color:'#fff'
           }}
         >
-          Serving Best Mexican Food In Cary Since 2010.
+          Serving Best Mexican Food In Cary Since Years.
         </Typography>
 
         <Button
               name='order_online'
-              href="tel:+19193770013"            
+              href="#/menu"            
               sx={{
                 display: 'flex',
                 bgcolor:"#00c20a",
@@ -101,7 +101,7 @@ const HeroSection = () => {
                   boxShadow: 'none', // Remove shadow on hover
                 }, 
               }}>
-                Call Now
+                View Our Menu ▶
             </Button>
 
 

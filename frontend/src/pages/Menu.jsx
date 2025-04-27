@@ -289,7 +289,7 @@ const Menu = () => {
       >
         <Typography
           variant="h6"
-          sx={{ color: "red", fontWeight: "bold", mb: 1 }}
+          sx={{ color: "#fe4438", fontWeight: "bold", mb: 1 }}
         >
           {section.title}
         </Typography>

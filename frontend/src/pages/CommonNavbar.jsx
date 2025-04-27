@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -24,8 +24,21 @@ const navLinks = [
 
 const CommonNavbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState(window.location.hash || '#/');
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash || '#/');
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const isActive = (href) => href === currentHash;
 
   return (
     <>
@@ -53,46 +66,63 @@ const CommonNavbar = () => {
                 {drawerOpen ? <Close /> : <Menu />}
               </IconButton>
 
-              <Box component="a" href="#/" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-                <Box component="img" src={logo} alt="Logo" sx={{ height: 60 }} />
+              <Box
+                component="a"
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault(); // prevent default link behavior
+                  window.location.href = '/'; // force reload and navigate to homepage
+                }}
+                sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}
+              >
+                <Box component="img" src={logo} alt="Logo" sx={{ height: 60, ml: 2 }} />
               </Box>
 
-              <Button
-              variant="contained"
-              href="tel:+19193770013" // Replace with your restaurant's number
-              sx={{
-                bgcolor: '#00c20a',
-                '&:hover': { bgcolor: '#00c20a' },
-                textTransform: 'none',
-              }}
-            >
-              Call Now
-            </Button>
 
+              <Button
+                variant="contained"
+                href="tel:+19193770013"
+                sx={{
+                  bgcolor: '#00c20a',
+                  '&:hover': { bgcolor: '#00c20a' },
+                  textTransform: 'none',
+                  px: 1,
+                }}
+              >
+                Call Now
+              </Button>
             </>
           ) : (
             <>
-              <Box component="a" href="#/" sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box component="a" href="#/" onClick={(e) => {
+                  e.preventDefault(); // prevent default link behavior
+                  window.location.href = '/'; // force reload and navigate to homepage
+                }}
+                      sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box component="img" src={logo} alt="Logo" sx={{ height: 60 }} />
               </Box>
 
-              <Box sx={{ display: 'flex', gap: 4 }}>
+              <Box sx={{ display: 'flex', gap: 4, backgroundColor: '' }}>
                 {navLinks.map((link) => (
                   <Typography
                     key={link.href}
                     component="a"
                     href={link.href}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     sx={{
                       color: '#fff',
                       textDecoration: 'none',
                       fontWeight: 500,
                       px: 1.5,
                       py: 0.5,
-                      borderRadius: 1,
-                      transition: 'all 0.1s ease',
+                      my: 1,
+                      borderRadius: 2,
+                      ...(isActive(link.href) && {
+                        border: '2px solid #ccc',
+                      }),
                       '&:hover': {
                         color: '#fff',
-                        bgcolor: '#333',
+                        bgcolor: '#444',
                       },
                     }}
                   >
@@ -103,7 +133,7 @@ const CommonNavbar = () => {
 
               {/* Right side: Login + Order */}
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Typography
+                {/* <Typography
                   component="a"
                   href="#/login"
                   sx={{
@@ -114,6 +144,9 @@ const CommonNavbar = () => {
                     py: 0.5,
                     borderRadius: 1,
                     transition: 'all 0.1s ease',
+                    ...(currentHash === '#/login' && {
+                      border: '1px solid #fff',
+                    }),
                     '&:hover': {
                       color: '#fff',
                       bgcolor: '#333',
@@ -121,11 +154,11 @@ const CommonNavbar = () => {
                   }}
                 >
                   Login
-                </Typography>
+                </Typography> */}
 
                 <Button
                   variant="contained"
-                  href="#/store"
+                  href="tel:+19193770013"
                   sx={{
                     bgcolor: '#00c20a',
                     '&:hover': { bgcolor: '#00c20a' },
@@ -150,6 +183,8 @@ const CommonNavbar = () => {
             sx: {
               bgcolor: '#111',
               pt: 10,
+              borderBottom: '2px solid #00c20a',
+                  
             },
           },
         }}
@@ -161,13 +196,22 @@ const CommonNavbar = () => {
               key={link.href}
               component="a"
               href={link.href}
-              onClick={() => setDrawerOpen(false)}
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setDrawerOpen(false);
+              }}
               sx={{
                 width: '100%',
                 justifyContent: 'center',
                 py: 2,
                 color: '#fff',
+                borderTop: '0px solid #555',
                 textAlign: 'center',
+                ...(isActive(link.href) && {
+                  borderBottom: '0px solid #00c20a',
+                  backgroundColor: '#333',
+                  color: '#00c20a',
+                }),
                 '&:hover': {
                   bgcolor: '#333',
                   color: '#00c20a',
@@ -179,9 +223,7 @@ const CommonNavbar = () => {
               </Typography>
             </ListItemButton>
           ))}
-
-
-
+{/* 
           <Divider sx={{ my: 1, bgcolor: '#333', width: '60%' }} />
 
           <ListItemButton
@@ -195,6 +237,10 @@ const CommonNavbar = () => {
               py: 2,
               color: '#fff',
               textAlign: 'center',
+              ...(currentHash === '#/login' && {
+                borderBottom: '2px solid #00c20a',
+                color: '#00c20a',
+              }),
               '&:hover': {
                 bgcolor: '#222',
                 color: '#00c20a',
@@ -204,7 +250,7 @@ const CommonNavbar = () => {
             <Typography sx={{ fontSize: '1.1rem', fontWeight: 500 }}>
               Login
             </Typography>
-          </ListItemButton>
+          </ListItemButton> */}
         </List>
       </Drawer>
     </>

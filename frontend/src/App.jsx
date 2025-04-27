@@ -13,6 +13,7 @@ import { useMediaQuery, useTheme } from '@mui/material';
 import { useProductStore } from './store/product';
 import HomePage from "./pages/HomePage";
 import Menu from "./pages/Menu";
+import Gallery from "./components/Gallery";
 
 
 
@@ -36,28 +37,7 @@ function App() {
 //"#f7f5f0"
   return (
       <Box px={0} py={0} sx={{backgroundColor:'#fff'}}>
-        {/* <FixedNavBar /> */}
         <CommonNavbar />
-        {/* <Box sx={{backgroundColor:"#000", justifyItems:'center'}} width="100%" paddingTop={'90px'}/> */}
-          
-        {/* <Box sx={{backgroundColor:"#222", justifyItems:'center'}} width="100%" paddingTop={'70px'}>
-          <Stack
-            direction="row"
-            justifyContent="space-evenly"
-            spacing={''}
-            height={30}
-            display={isMediumScreen ? "none" : "flex"}
-            width="80%"
-          >
-            <Link href="/" color='#fff' underline="none">Home</Link>
-            <Link href="/create" color='#fff' underline="none">Add Product</Link>
-            <Link href="/store" color='#fff' underline="none">Store</Link>
-            <Link href="#contact-us" color='#fff' underline="none">Contact Us</Link>
-            <Link href="#halal-certifications" color='#fff' underline="none">Halal Certifications</Link>
-            <Link href="#faqs" color='#fff' underline="none">FAQs</Link>
-            <Link href="/testpage" color='#fff' underline="none">TestPage</Link>
-          </Stack>
-        </Box> */}
 
         {/* Define Routes for the pages */}
         <Routes>
@@ -67,7 +47,9 @@ function App() {
           <Route path="/testpage" element={<AddressForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
+
         <CommonFooter />
         
       </Box>

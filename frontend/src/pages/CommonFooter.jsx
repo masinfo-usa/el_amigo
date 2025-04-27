@@ -12,7 +12,7 @@ const CommonFooter = () => {
           {/* Location + Map */}
           <Box flex={1}>
             <Typography variant="h6" gutterBottom>Visit Us</Typography>
-            <Box display="flex" alignItems="center" gap={1} mb={1}>
+            <Box display="flex" alignItems="center" gap={1} mb={1}> 
               <LocationOn fontSize="small" />
               <Typography variant="body2">404 W Chatham St, Cary, NC 27511</Typography>
             </Box>
@@ -20,7 +20,7 @@ const CommonFooter = () => {
               <iframe
                 title="Map"
                 width="100%"
-                height="150"
+                height="225"
                 style={{ border: 0 }}
                 loading="lazy"
                 allowFullScreen
@@ -45,12 +45,15 @@ const CommonFooter = () => {
           <Box flex={1}>
             <Typography variant="h6" gutterBottom>Contact</Typography>
             <Box display="flex" alignItems="center" gap={1}>
-              <Phone fontSize="small" />
+            <Phone fontSize="small" />
+            <a href="tel:+19193770013" style={{ textDecoration: '', color: '#fff' }}>
               <Typography variant="body2">+1 (919) 377-0013</Typography>
-            </Box>
+            </a>
+          </Box>
+
             <Box display="flex" alignItems="center" gap={1} mt={1}>
               <Email fontSize="small" />
-              <Typography variant="body2">hello@restaurant.com</Typography>
+              <Typography variant="body2">el.amigo.cary@gmail.com</Typography>
             </Box>
           </Box>
 
@@ -68,13 +71,13 @@ const CommonFooter = () => {
               <FaGoogle size={24} />
               </IconButton>
             </Box>
-            <Divider sx={{ bgcolor: '#444' }} />
+            {/* <Divider sx={{ bgcolor: '#444' }} />
             <Typography variant="caption" display="block" mt={2}>
               <Link href="#" underline="hover" color="inherit">Terms & Conditions</Link>
             </Typography>
             <Typography variant="caption" display="block">
               <Link href="#" underline="hover" color="inherit">Privacy Policy</Link>
-            </Typography>
+            </Typography> */}
           </Box>
         </Box>
       </Container>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, CardMedia, Avatar, Paper, Divider, IconButton, Link } from '@mui/material';
+import { Box, Typography, Container, CardMedia, Avatar, Paper, Divider, IconButton, Link, Button } from '@mui/material';
 import { Facebook, Instagram, YouTube, LocationOn, Email, Phone } from '@mui/icons-material';
 import HeroSection from '../components/HeroSection';
 import YelpReview from '../components/YelpReview';
@@ -82,11 +82,57 @@ const HomePage = () => {
         </Box>
 
 
-     
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          textAlign="center"
+          color={'#fff'}
+          mt={15}
+          px={2}
+        >
+          <Typography variant="h4" component="h2" mb={2}>
+            Explore Our Dishes
+          </Typography>
+          <Typography variant="body1" mb={4} maxWidth="600px">
+            Take a closer look at the delicious flavors we serve every day.
+            Browse through our handpicked selection of authentic Mexican dishes.
+          </Typography>
+
+          <Button
+            href="#/gallery"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            sx={{
+              display: 'flex',
+              bgcolor: "#00c20a",
+              alignItems: 'center',
+              justifySelf: 'center',
+              borderRadius: 2,
+              padding: '8px 6px',
+              textTransform: 'none',
+              boxShadow: 'none',
+              color: '#FFF',
+              fontSize: 20,
+              width: { xs: '80%', md: '300px' },
+              height: '50px',
+              mt: 0,
+              mb: 5,
+              px: 2,
+              '&:hover': {
+                boxShadow: 'none',
+              },
+            }}
+          >
+            View Photo Gallery ▶
+          </Button>
+        </Box>
 
 
 
-      {/* Our History Section */}
+
+
+
+      {/* Our Chef Section */}
       <Box
           display="grid"
           sx={{
