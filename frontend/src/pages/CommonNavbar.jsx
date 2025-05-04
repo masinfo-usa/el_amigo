@@ -68,11 +68,20 @@ const CommonNavbar = () => {
 
               <Box
                 component="a"
-                href="/"
+                href="#/"
+                
                 onClick={(e) => {
-                  e.preventDefault(); // prevent default link behavior
-                  window.location.href = '/'; // force reload and navigate to homepage
+                  if (window.location.hash === '#/') {
+                    e.preventDefault(); // prevent default link behavior
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                    window.location.reload(); // force reload and navigate to homepage
+                  }
+                  else{
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
                 }}
+
+
                 sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}
               >
                 <Box component="img" src={logo} alt="Logo" sx={{ height: 60, ml: 2 }} />
@@ -94,11 +103,18 @@ const CommonNavbar = () => {
             </>
           ) : (
             <>
-              <Box component="a" href="#/" onClick={(e) => {
+              <Box component="a" href="#/" 
+              onClick={(e) => {
+                if (window.location.hash === '#/') {
                   e.preventDefault(); // prevent default link behavior
-                  window.location.href = '/'; // force reload and navigate to homepage
-                }}
-                      sx={{ display: 'flex', alignItems: 'center' }}>
+                  window.scrollTo({ top: 0, behavior: 'instant' });
+                  window.location.reload(); // force reload and navigate to homepage
+                }
+                else{
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+                sx={{ display: 'flex', alignItems: 'center' }}>
                 <Box component="img" src={logo} alt="Logo" sx={{ height: 60 }} />
               </Box>
 

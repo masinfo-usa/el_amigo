@@ -82,6 +82,7 @@ const HeroSection = () => {
         <Button
               name='order_online'
               href="#/menu"            
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               sx={{
                 display: 'flex',
                 bgcolor:"#00c20a",

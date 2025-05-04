@@ -63,13 +63,22 @@ const Gallery = () => {
   return (
     <Box
       sx={{
-        display: 'grid',
-        gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
+        // display: 'grid',
+        // gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr' },
+        // gap: 3,
+        // py: 2,
+        // alignItems: 'flex-start',
+        
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        backgroundColor: '',
         gap: 3,
-        py: 2,
+        py: 2, 
         alignItems: 'flex-start',
         justifySelf: 'center',
         width: { xs: '95%', lg: '90%' },
+
       }}
     >
       {images.map((src, index) => (
@@ -266,7 +275,7 @@ const Gallery = () => {
             sx={{
               width: '100%',
               height: 'auto',
-              maxHeight: '70vh',
+              maxHeight: '60vh',
               objectFit: 'cover',
               borderRadius: 2,
             }}
